@@ -1,103 +1,129 @@
-import Image from "next/image";
+"use client"
+import React from 'react';
+import Link from 'next/link';
 
-export default function Home() {
+import { Button } from '@/components/ui/button';
+import { Divide, Rabbit, Sun,Users,Star,ExternalLink, Settings } from 'lucide-react';
+import Lottie from 'lottie-react';
+import animationData from "@/public/FileAnimation.json";
+import { useEffect, useState } from 'react';
+
+import { Dancing_Script } from "next/font/google";
+import { Fira_Code } from 'next/font/google'
+
+const firacode = Fira_Code({
+  subsets: ['latin'],
+  weight: ['400'],  // bold
+});
+
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: "700",
+  display: "swap",
+});
+
+
+
+const Page = () => {
+  const  [splash, setsplash] = useState(true);
+  useEffect(() => {
+    const timer=setTimeout(()=>{
+      setsplash(false);
+    },1000 )
+  
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [])
+
+  if(splash){
+    return(<>
+    
+
+
+      <div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
+            <div className="flex w-full max-w-sm flex-col gap-6">
+              <div className="flex items-center gap-2 self-center font-medium">
+                <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
+                  <Rabbit className="size-4" />
+                </div>
+                Filo Inc.
+              </div>
+              
+            </div>
+          </div></>
+    )
+  }
+
+
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <div className="w-[80%] m-auto py-4  ">
+      <div className="flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center space-x-2 ">
+          
+          <div className='h-9 w-9 bg-gray-100 flex items-center justify-center rounded-md'><Rabbit className="text-gray-900 h-7 w-7 " /></div>
+          
+          <p className={`text-3xl  ${dancingScript.className} dark:text-gray-100 `}>Filo</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Buttons */}
+        <div className="flex items-center space-x-4">
+          <Button variant="outlined" className={`border-1 border-neutral-800 text-gray-100`}>
+            <Sun className="h-5 w-5" />
+          </Button>
+          <Button variant="secondary"><Link href='/files'>Open App</Link></Button>
+        </div>
+      </div>
+      </div>
+
+      <div className="py-2 px-2 flex justify-center space-x-8 text-sm font-semibold text-gray-400 ">
+      {/* Users Section */}
+      <div className="flex items-center space-x-1">
+        <Users className='text-green-400 drop-shadow-[0_0_8px_#4ade80] h-4'/>
+        <span>11 users</span> 
+      </div>
+
+      {/* GitHub Section */}
+      <div className="flex items-center space-x-1 group">
+        <Star className='text-green-600 h-4 drop-shadow-[0_0_8px_#4ade80] ' />
+        <span className=' group-hover:text-gray-100 transition-colors duration-300 '>Star on GitHub</span>
+        <ExternalLink className=' text-gray-500 h-3  group-hover:text-gray-100 transition-colors duration-300'/>
+      </div>
     </div>
+
+
+  <div className="w-[90%] max-w-7xl mx-auto py-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 mt-20">
+  
+  {/* Left Side: Text */}
+  <div className="text-center lg:text-left space-y-6 w-full lg:w-1/2">
+    <div className={`${firacode.className} text-gray-100 text-4xl md:text-5xl lg:text-6xl leading-tight`}>
+      Upload.<span className="text-green-400">Share</span>.Done.
+    </div>
+    <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+      Make file sharing fast, secure, and hassle-free. Sign up, upload your files, and instantly get a shareable link. Keep your data safe while making file sharing easy across any device.
+    </p>
+    <Button variant="outline">Get Started</Button>
+  </div>
+
+  {/* Right Side: Animation */}
+  <div className="flex justify-center w-full lg:w-1/2">
+    <Lottie
+      animationData={animationData}
+      loop
+      autoplay
+      style={{ width: 300, height: 300 }}
+    />
+  </div>
+
+</div>
+
+    </div>
+
   );
-}
+};
+
+export default Page;

@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { toast } from "sonner";
 
+
 import Link from "next/link";
 
 import { Fira_Code } from 'next/font/google'
@@ -48,7 +49,7 @@ export default function FilesPage() {
   }, [user]);
 
   return (
-    <div className="p-8 min-h-screen bg-neutral-900 text-gray-300 ">
+    <div className={`p-8 min-h-screen bg-neutral-900 text-gray-300 `}>
       <h1 className={`text-3xl ${firacode.className} font-bold text-green-400 mb-6`}>Your Uploaded Files</h1>
 
       {loading ? (

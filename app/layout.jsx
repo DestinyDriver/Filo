@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider ,SignedIn,SignedOut} from "@clerk/nextjs";
+import styles from "@/app/scrollbar.css"
 
 
 
@@ -27,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-    <html lang="en" className="dark bg-neutral-900">
+    <html lang="en" className={`dark bg-neutral-900 ${styles.container}`}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-900`}>
         {children}
       </body>

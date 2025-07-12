@@ -1,0 +1,56 @@
+/* crazy-scrollbar.css */
+
+/* Scrollbar Container */
+::-webkit-scrollbar {
+  width: 16px;
+  background: black;
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: url('https://www.transparenttextures.com/patterns/black-linen.png');
+  background-size: cover;
+  border-left: 1px solid #0f0;
+  box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+/* Scroll Thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(270deg, #00ffcc, #00ff99, #00ffcc);
+  background-size: 400% 400%;
+  animation: scrollGlow 4s ease infinite;
+  border-radius: 8px;
+  box-shadow:
+    0 0 5px #00ffaa,
+    0 0 10px #00ffaa,
+    inset 0 0 5px #0f0;
+}
+
+/* Scroll Thumb Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(270deg, #00ffcc, #00ff66, #00ffcc);
+  background-size: 300% 300%;
+  animation: scrollGlowHover 2s ease-in-out infinite;
+  box-shadow:
+    0 0 8px #00ffcc,
+    0 0 16px #00ffcc,
+    inset 0 0 6px #0f0;
+}
+
+/* Firefox fallback */
+* {
+  scrollbar-color: #00ffaa black;
+  scrollbar-width: thin;
+}
+
+/* Animations */
+@keyframes scrollGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scrollGlowHover {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}

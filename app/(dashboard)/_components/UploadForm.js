@@ -21,7 +21,7 @@ const UploadForm = ({ uploadFile }) => {
 
   function fileSelect(nfile) {
     if (nfile && nfile.size > 2097152) {
-      toast.error("Maximum File Size Exceeded");
+      toast.error("Maximum size exceeded (2MB limit). Please upgrade your plan to upload larger files.");
       setFile(null);
       return;
     }
@@ -79,11 +79,11 @@ const UploadForm = ({ uploadFile }) => {
           className={`${firacode.className} text-center flex-wrap align-center text-xl md:text-2xl lg:text-3xl px-4 py-4`}
         >
           Start{" "}
-          <strong className="text-green-400 dark:text-green-600 text-2xl md:text-3xl lg:text-4xl">
+          <strong className="text-green-500 dark:text-green-500 text-2xl md:text-3xl lg:text-4xl">
             Uploading
           </strong>{" "}
           File and{" "}
-          <strong className="text-green-500/90 dark:text-green-600 text-2xl md:text-3xl lg:text-4xl">
+          <strong className="text-green-500 dark:text-green-500 text-2xl md:text-3xl lg:text-4xl">
             Share
           </strong>{" "}
           it
@@ -134,8 +134,8 @@ const UploadForm = ({ uploadFile }) => {
           <Button
             onClick={handleUpload}
             disabled={!file}
-            variant="outline"
-            className={`px-8`}
+            // variant="outline"
+            className={`px-8 bg-green-500 hover:bg-green-600`}
           >
             Upload
           </Button>

@@ -118,7 +118,7 @@ const [fileNotFound, setfileNotFound] = useState(false)
         </p>
 
         <Input type="password" placeholder="Enter the password to access" className="bg-neutral-700 text-white" onChange={(el)=>{setinputPassword(el.target.value)}} />
-        <Button className="w-full" disabled={password&&password!=inputPassword} onClick={handleDownload} >Download</Button>
+        <Button className="w-full bg-green-500 hover:bg-green-600" disabled={password&&password!=inputPassword} onClick={handleDownload} >Download</Button>
 
         <p className="text-xs text-neutral-500 text-center">* Terms and conditions apply</p>
       </div>

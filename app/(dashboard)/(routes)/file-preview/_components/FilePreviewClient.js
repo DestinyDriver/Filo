@@ -155,7 +155,7 @@ const FilePreviewClient = ({ short_url }) => {
               readOnly
               className=" text-gray-400/60"
             />
-            <Button onClick={handleCopy} className="p-1 text-neutral-900  transition">
+            <Button onClick={handleCopy} className="p-1 bg-green-500 hover:bg-green-600 text-neutral-900  transition">
               <Copy size={20} />
             </Button>
             </div>
@@ -175,7 +175,7 @@ const FilePreviewClient = ({ short_url }) => {
               Enter Password
             </label>
             <div className="flex gap-2"><Input type="password" name="Password" value={keyPassword}  onChange={(e)=>{setkeyPassword(e.target.value)}}  className="bg-white text-gray-400/60" />
-            <Button onClick={()=>{savePassword()}}>Save</Button></div>
+            <Button onClick={()=>{savePassword()}} className={"bg-green-500 hover:bg-green-600"}>Save</Button></div>
           </div>:null}
 
           {/* Email Input */}
@@ -184,7 +184,7 @@ const FilePreviewClient = ({ short_url }) => {
               Email
             </label>
             <Input type="email" name="maili" className="bg-white text-gray-400/60" placeholder="example@gmail.com" />
-            <Button className={"mt-1 w-[100%]"}>Send Email</Button>
+            <Button className={"mt-1 w-[100%] bg-green-500 hover:bg-green-600"}>Send Email</Button>
           </div>
         </div>
       </div>

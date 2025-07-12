@@ -75,7 +75,7 @@ const Page = () => {
           <Button variant="outlined" className={`border-1 border-neutral-800 text-gray-100`}>
             <Sun className="h-5 w-5" />
           </Button>
-          <Button variant="secondary"><Link href='/files'>Open App</Link></Button>
+          <Button variant="secondary" className={""}><Link href='/choice'>Open App</Link></Button>
         </div>
       </div>
       </div>
@@ -90,8 +90,10 @@ const Page = () => {
       {/* GitHub Section */}
       <div className="flex items-center space-x-1 group">
         <Star className='text-green-600 h-4 drop-shadow-[0_0_8px_#4ade80] ' />
+        <a href="https://github.com/DestinyDriver/Filo" className='flex  items-center' target='_blank'>
         <span className=' group-hover:text-gray-100 transition-colors duration-300 '>Star on GitHub</span>
         <ExternalLink className=' text-gray-500 h-3  group-hover:text-gray-100 transition-colors duration-300'/>
+        </a>
       </div>
     </div>
 
@@ -106,7 +108,7 @@ const Page = () => {
     <p className="text-gray-400 text-base md:text-lg leading-relaxed">
       Make file sharing fast, secure, and hassle-free. Sign up, upload your files, and instantly get a shareable link. Keep your data safe while making file sharing easy across any device.
     </p>
-    <Button variant="outline">Get Started</Button>
+    <Button variant="outline" className={"bg-green-500 hover:bg-green-600"}><Link href='/choice'>Get Started</Link></Button>
   </div>
 
   {/* Right Side: Animation */}

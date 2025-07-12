@@ -78,7 +78,7 @@ const data = {
     },
     {
       title: "Newsletter",
-      url: ".newsletter",
+      url: "/newsletter",
       icon: Newspaper,
       color:"text-rose-400",
     },
@@ -86,14 +86,14 @@ const data = {
   navSecondary: [
     {
       title: "Star on Github",
-      url: "#",
+      url: "https://github.com/DestinyDriver/Filo",
       icon: Star,
       color:"text-green-400",
       glow:"drop-shadow-[0_0_8px_#4ade80]",
     },
     {
       title: "Report Issue",
-      url: "#",
+      url: "https://github.com/DestinyDriver/Filo/issues",
       icon: Bug,
       color:"text-purple-400",
       glow:"drop-shadow-[0_0_8px_#c084fc]"
@@ -131,7 +131,7 @@ export function AppSidebar({
       </SidebarContent>
 
       <SidebarFooter className={"border-t-1 "}>
-        <NavUser user={data.user} />
+        <NavUser />
       </SidebarFooter>
     </Sidebar>
    

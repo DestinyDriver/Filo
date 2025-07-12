@@ -9,7 +9,7 @@ const FilePreview = ({file,RemoveFile}) => {
   {/* Cross Button in top-right */}
   <button
     type="button"
-    className="absolute top-2 right-2 text-red-500 p-2 rounded hover:opacity-80 cursor-pointer" onClick={()=>{RemoveFile();}}
+    className="absolute top-2 right-2 text-red-500 p-2 rounded hover:opacity-80 cursor-pointer " onClick={()=>{RemoveFile();}}
   >
     <CircleX className="w-4 h-4" />
   </button>

@@ -11,7 +11,7 @@ import Link from "next/link";
 import { Copy } from 'lucide-react';
 
 
-const FilePreviewClient = ({ short_url }) => {
+const FilePreviewClient = () => {
   const searchParams = useSearchParams();
   const docID = searchParams.get("docID");
   const [usepass, setusepass] = useState(false)
@@ -128,13 +128,13 @@ const FilePreviewClient = ({ short_url }) => {
       </div>
 
       {/* Layout */}
-      <div className="flex flex-col md:flex-row justify-between gap-8">
+      <div className="flex flex-col md:flex-row justify-between gap-8 ">
         {/* Placeholder for Preview */}
         <div className="border rounded-lg  md:w-[40%] h-70 bg-neutral-800 flex items-center justify-center relative ">
 
-          {isImage ? (<img src={fileInfo.file_url} alt="file preview" className="max-w-full max-h-[80vh] rounded-lg select-none" />):
+          {isImage ? (<img src={fileInfo.file_url} alt="file preview" className="max-w-full max-h-full absolute top-0 rounded-lg select-none " />):
             isPDF?(<iframe src={fileInfo.file_url} className="w-full h-120 rounded-lg absolute top-0 select-none" frameBorder="0" />):
-              (<img src="/files.svg" alt="File Preview" className="max-w-20 max-h-[20vh] rounded-lg select-none " />)
+              (<img src="/files.svg" alt="File Preview" className="max-w-20 max-h-[20vh] rounded-lg top-0 select-none " />)
           }
           
         </div>

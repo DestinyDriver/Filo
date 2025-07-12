@@ -1,12 +1,18 @@
 "use client"
 import React from 'react';
+
 import Link from 'next/link';
+import { Dot } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Divide, Rabbit, Sun,Users,Star,ExternalLink, Settings } from 'lucide-react';
 import Lottie from 'lottie-react';
 import animationData from "@/public/FileAnimation.json";
 import { useEffect, useState } from 'react';
+import liveAnimationData from "@/assest/GreenLiveAnimation.json"
+
+
+
 
 import { Dancing_Script } from "next/font/google";
 import { Fira_Code } from 'next/font/google'
@@ -71,10 +77,14 @@ const Page = () => {
         </div>
 
         {/* Buttons */}
-        <div className="flex items-center space-x-4">
-          <Button variant="outlined" className={`border-1 border-neutral-800 text-gray-100`}>
-            <Sun className="h-5 w-5" />
-          </Button>
+        <div className="flex items-center space-x-4 relative ">
+          <Button variant="outline" className={"rounded-full text-green-500 hover:text-green-600"} ><Lottie
+           animationData={liveAnimationData}
+           loop
+      autoplay
+      className='w-[100%] h-[100%]'
+    />Live</Button>
+          
           <Button variant="secondary" className={""}><Link href='/choice'>Open App</Link></Button>
         </div>
       </div>
@@ -84,7 +94,7 @@ const Page = () => {
       {/* Users Section */}
       <div className="flex items-center space-x-1">
         <Users className='text-green-400 drop-shadow-[0_0_8px_#4ade80] h-4'/>
-        <span>11 users</span> 
+        <span><strong className='font-semibold text-gray-300'>11</strong> users</span> 
       </div>
 
       {/* GitHub Section */}
@@ -108,7 +118,7 @@ const Page = () => {
     <p className="text-gray-400 text-base md:text-lg leading-relaxed">
       Make file sharing fast, secure, and hassle-free. Sign up, upload your files, and instantly get a shareable link. Keep your data safe while making file sharing easy across any device.
     </p>
-    <Button variant="outline" className={"bg-green-500 hover:bg-green-600"}><Link href='/choice'>Get Started</Link></Button>
+    <Button variant="outline"><Link href='/choice'>Get Started</Link></Button>
   </div>
 
   {/* Right Side: Animation */}
@@ -119,6 +129,7 @@ const Page = () => {
       autoplay
       style={{ width: 300, height: 300 }}
     />
+
   </div>
 
 </div>

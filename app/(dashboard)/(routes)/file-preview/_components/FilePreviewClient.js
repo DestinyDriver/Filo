@@ -130,9 +130,9 @@ const FilePreviewClient = () => {
       {/* Layout */}
       <div className="flex flex-col md:flex-row justify-between gap-8 ">
         {/* Placeholder for Preview */}
-        <div className="border rounded-lg  md:w-[40%] h-70 bg-neutral-800 flex items-center justify-center relative ">
+        <div className="border  rounded-lg  md:w-[40%] h-70 bg-neutral-800 flex items-center justify-center relative ">
 
-          {isImage ? (<img src={fileInfo.file_url} alt="file preview" className="max-w-full max-h-full absolute top-0 rounded-lg select-none " />):
+          {isImage ? (<img src={fileInfo.file_url} alt="file preview" className="max-w-[95%] max-h-[95%]  rounded-lg select-none " />):
             isPDF?(<iframe src={fileInfo.file_url} className="w-full h-120 rounded-lg absolute top-0 select-none" frameBorder="0" />):
               (<img src="/files.svg" alt="File Preview" className="max-w-20 max-h-[20vh] rounded-lg top-0 select-none " />)
           }

@@ -24,16 +24,20 @@ const [fileNotFound, setfileNotFound] = useState(false)
   
 
   useEffect(() => {
-    const completeShortUrl=`${window.location.origin}/view-file/${shortUrlId}`
+    const completeShortUrl=`${process.env.NEXT_PUBLIC_BASE_URL}view-file/${shortUrlId}`
     const fetchData=async()=>{
+      console.log(completeShortUrl);
+      
       const {data,error}=await supabase
           .from('filoinfo')
           .select('*')
           .eq('short_url',completeShortUrl)
           .single();
+          console.log(completeShortUrl);
 
       if(error){
         console.log("error occured in FileViewer in fetchData ",error.message);
+        console.log(completeShortUrl);
         setLoading(false);
         setfileNotFound(true);
 

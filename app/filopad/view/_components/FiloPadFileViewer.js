@@ -90,7 +90,7 @@ const FiloPadFileViewer = ({short_url_id}) => {
         </div>
 
 
-    <div className=" bg-neutral-900 flex items-center justify-center px-4 w-[45vw]">
+    <div className=" bg-neutral-900 flex items-center justify-center px-4  lg:w-[45vw] w-[90vw] md:w-[70vw]">
         <AlertMessage/>
       <div className="w-full max-w-3xl rounded-2xl bg-neutral-800 border-1 rounded-sm  border-neutral-700 shadow-xl p-8 space-y-6">
         
@@ -105,7 +105,7 @@ const FiloPadFileViewer = ({short_url_id}) => {
         <textarea
         readOnly
         //   className="w-full h-64 resize-none bg-neutral-900 border border-green-500 text-neutral-100 placeholder:text-gray-500 p-4 rounded-lg font-mono text-sm shadow-inner focus:outline-none focus:ring-2 focus:ring-green-500 transition"
-          className="w-full h-64 resize-none bg-neutral-900 border border-green-500 text-gray-500  placeholder:text-gray-500 p-4 rounded-lg font-mono text-sm shadow-inner focus:outline-none focus:ring-2 focus:ring-green-500 transition
+          className="w-full h-64 resize-none bg-neutral-900 border border-green-500 text-gray-500  placeholder:text-gray-500 p-4 rounded-sm font-mono text-sm shadow-inner focus:outline-none focus:ring-2 focus:ring-green-500 transition
     scrollbar-thin scrollbar-track-neutral-800 scrollbar-thumb-green-500 hover:scrollbar-thumb-green-600"
         placeholder="// Shared Text Will be Shown Here. Loading..."
           value={text}

@@ -9,18 +9,13 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { toast } from "sonner";
 
-
 import Link from "next/link";
-
-import { Fira_Code } from 'next/font/google'
+import { Fira_Code } from 'next/font/google';
 
 const firacode = Fira_Code({
   subsets: ['latin'],
-  weight: ['400'],  // bold
+  weight: ['400'],
 });
-
-
-
 
 export default function FilesPage() {
   const { user } = useUser();
@@ -49,11 +44,13 @@ export default function FilesPage() {
   }, [user]);
 
   return (
-    <div className={`p-8 min-h-screen bg-neutral-900 text-gray-300 `}>
-      <h1 className={`text-3xl ${firacode.className} font-bold text-green-400 mb-6`}>Your Uploaded Files</h1>
+    <div className={`px-4 sm:px-8 py-6 min-h-screen bg-neutral-900 text-gray-300`}>
+      <h1 className={`text-2xl sm:text-3xl ${firacode.className} font-bold text-green-400 mb-6`}>
+        Your Uploaded Files
+      </h1>
 
       {loading ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[...Array(6)].map((_, i) => (
             <Skeleton key={i} className="h-32 w-full rounded-xl bg-neutral-800" />
           ))}
@@ -61,11 +58,16 @@ export default function FilesPage() {
       ) : files.length === 0 ? (
         <p className="text-gray-500">No files uploaded yet.</p>
       ) : (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {files.map((file, index) => (
-            <Card key={index} className="bg-neutral-900 border border-neutral-700 text-gray-200">
+            <Card
+              key={index}
+              className="bg-neutral-900 border border-neutral-700 text-gray-200 w-full"
+            >
               <CardContent className="p-4 space-y-2">
-                <div className="text-lg font-semibold truncate">📄 {file.file_name}</div>
+                <div className="text-base sm:text-lg font-semibold truncate">
+                  📄 {file.file_name}
+                </div>
                 <div className="flex justify-between text-sm">
                   <Badge variant="outline" className="text-xs text-green-400 border-green-600">
                     {file.file_type}
@@ -73,8 +75,8 @@ export default function FilesPage() {
                   <span>{(file.file_size / (1024 * 1024)).toFixed(2)} MB</span>
                 </div>
                 <div className="text-sm mt-2 truncate text-blue-400">
-                  <Link href={`${file.short_url}`} className="hover:underline">
-                    {`${file.short_url}`}
+                  <Link href={`${file.short_url}`} className="hover:underline break-all">
+                    {file.short_url}
                   </Link>
                 </div>
               </CardContent>

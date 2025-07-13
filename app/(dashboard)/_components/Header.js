@@ -20,12 +20,8 @@ const Header = () => {
         />
         <Breadcrumb>
           <BreadcrumbList>
-            <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="#">
-                Files
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator className="hidden md:block" />
+            FiloDrop
+            
           </BreadcrumbList>
         </Breadcrumb>
       </div>

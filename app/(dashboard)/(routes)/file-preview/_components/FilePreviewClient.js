@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { CircleArrowLeft } from "lucide-react";
+import { CircleArrowLeft, Hammer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/utils/supabase/client";
@@ -9,6 +9,7 @@ import AlertMessage from "@/app/(dashboard)/_components/AlertMessage";
 import { toast } from "sonner";
 import Link from "next/link";
 import { Copy } from 'lucide-react';
+
 
 
 const FilePreviewClient = () => {
@@ -108,6 +109,25 @@ const FilePreviewClient = () => {
   
 
 
+const UnderConc=()=>{
+  toast("🚧 Feature Under Construction", {
+  description: "We're building this part right now!",
+  icon: <Hammer className="text-yellow-400" />,
+  className: `
+    bg-white/10 
+    backdrop-blur-md 
+    border 
+    border-white/20 
+    text-yellow-200 
+    rounded-xl 
+    px-4 
+    py-3 
+    shadow-lg 
+    font-medium
+  `,
+  duration: 4500,
+});
+}
   
 
 
@@ -184,7 +204,7 @@ const FilePreviewClient = () => {
               Email
             </label>
             <Input type="email" name="maili" className="bg-white text-gray-400/60" placeholder="example@gmail.com" />
-            <Button className={"mt-1 w-[100%] bg-green-500 hover:bg-green-600"}>Send Email</Button>
+            <Button className={"mt-1 w-[100%] bg-green-500 hover:bg-green-600" } onClick={()=>{UnderConc()}}>Send Email</Button>
           </div>
         </div>
       </div>

@@ -72,7 +72,7 @@ npm run dev
 
 ## 🧠 PMI Diagram
 
-![PMI Diagram](lhttps://github.com/DestinyDriver/Filo/blob/main/asset/demo-flow.png)
+![PMI Diagram](https://github.com/DestinyDriver/Filo/blob/main/asset/demo-flow.png)
 
 > Architecture and flow of Filo app
 

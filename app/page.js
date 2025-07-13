@@ -9,7 +9,7 @@ import { Divide, Rabbit, Sun,Users,Star,ExternalLink, Settings } from 'lucide-re
 import Lottie from 'lottie-react';
 import animationData from "@/public/FileAnimation.json";
 import { useEffect, useState } from 'react';
-import liveAnimationData from "@/assest/GreenLiveAnimation.json"
+import liveAnimationData from "@/asset/GreenLiveAnimation.json"
 
 
 

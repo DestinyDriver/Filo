@@ -4,7 +4,7 @@ import { Rabbit } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Lottie from 'lottie-react';
-import folderAnimation from "@/assest/dark.json"
+import folderAnimation from "@/asset/dark.json"
 import { toast } from 'sonner';
 import AlertMessage from '@/app/(dashboard)/_components/AlertMessage';
 import { useEffect } from 'react';

@@ -27,6 +27,26 @@ Filo is a dual-purpose tool for efficient file and text/code sharing.
 
 ---
 
+## 🛠 Features
+
+| Feature     | FiloDrop ✅ | FiloPad ✅ |
+|-------------|-------------|------------|
+| Auth required | ✅ | ❌ |
+| Upload files | ✅ | ❌ |
+| Share code/text | ❌ | ✅ |
+| Short links | ✅ | ✅ |
+| Password-protect | ✅ | ❌ |
+
+---
+
+## 🧠 WorkFLow
+
+![PMI Diagram](https://github.com/DestinyDriver/Filo/blob/main/asset/demo-flow.png)
+
+> Architecture and flow of Filo app
+
+---
+
 ## 📸 Preview
 
 | FiloDrop | FiloPad |
@@ -35,13 +55,20 @@ Filo is a dual-purpose tool for efficient file and text/code sharing.
 
 ---
 
+## 🎥 Demo
+
+[![Watch the video](https://img.youtube.com/vi/3W4SmwV2Uak/maxresdefault.jpg)](https://www.youtube.com/watch?v=3W4SmwV2Uak)
+
+Click above to watch a short video demo of Filo in action.
+
+---
+
 ## 🧪 Tech Stack
 
-- **Frontend**: Next.js, Tailwind CSS
+- **Frontend**: Next.js, Tailwind CSS, ShadCN UI, Lucide Icons, Lottie (Animations)
 - **Backend**: Supabase (DB + Storage)
-- **Authentication**: Clerk.dev
-- **Styling**: Tailwind CSS + Lucide Icons 
-- **Others**: Sonner (toasts), ShadCN UI
+- **Authentication**: Clerk.dev 
+- **Others**: Sonner (toasts)
 
 ---
 
@@ -70,34 +97,6 @@ npm run dev
 
 ---
 
-## 🧠 PMI Diagram
-
-![PMI Diagram](https://github.com/DestinyDriver/Filo/blob/main/asset/demo-flow.png)
-
-> Architecture and flow of Filo app
-
----
-
-## 🎥 Demo
-
-[![Watch the video](https://img.youtube.com/vi/your-video-id/maxresdefault.jpg)](https://www.youtube.com/watch?v=your-video-id)
-
-Click above to watch a short video demo of Filo in action.
-
----
-
-## 🛠 Features
-
-| Feature     | FiloDrop ✅ | FiloPad ✅ |
-|-------------|-------------|------------|
-| Auth required | ✅ | ❌ |
-| Upload files | ✅ | ❌ |
-| Share code/text | ❌ | ✅ |
-| Short links | ✅ | ✅ |
-| Password-protect | ✅ | ❌ |
-
----
-
 ## 🙌 Contributing
 
 We welcome contributions! Fork the repo and submit a PR.
@@ -119,4 +118,4 @@ See [`LICENSE`](./LICENSE) for more.
 
 ---
 
-> Made with ❤️ by [Your Name]
+> Made with ❤️ by DestinyDriver
